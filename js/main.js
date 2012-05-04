@@ -3,3 +3,4 @@ if ("ontouchstart" in document.documentElement) {
 }
 
 impress().init();
+prettyPrint()

@@ -1,12 +1,32 @@
+/*  --------------------------------------------------
+    $CONTENTS
+    --------------------------------------------------
+    :: box-sizing: border-box;
+    :: NORMALIZE
+    :: MAIN
+    :: CODE
+    :: MISC
+    :: PRINT
+
+    --------------------------------------------------
+    $CREDITS
+    --------------------------------------------------
+    :: * { box-sizing: border-box } FTW :: Paul Irish                          :: http://paulirish.com/2012/box-sizing-border-box-ftw/
+    :: normalize.css                    :: Nicolas Gallagher and Jonathan Neal :: http://necolas.github.com/normalize.css/
+    :: Sunburst code theme              :: David Leibovic                      :: https://code.google.com/p/google-code-prettify/source/browse/trunk/styles/sunburst.css
+    :: Non-semantic helper classes      :: H5BP Team                           :: https://github.com/h5bp/html5-boilerplate/blob/master/css/style.css#L248-270
+    :: Print styles                     :: H5BP Team                           :: https://github.com/h5bp/html5-boilerplate/blob/master/css/style.css#L274-292
+*/
+
 * {
     -webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */
        -moz-box-sizing: border-box; /* FF1+ */
             box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
 }
 
-/*	--------------------------------------------------
-	$NORMALIZE
-	-------------------------------------------------- */
+/*  --------------------------------------------------
+    $NORMALIZE
+    -------------------------------------------------- */
 article,
 aside,
 details,
@@ -189,24 +209,29 @@ table {
     border-spacing: 0;
 }
 
-/*	--------------------------------------------------
-	$MAIN
-	-------------------------------------------------- */
+/*  --------------------------------------------------
+    $MAIN
+    -------------------------------------------------- */
 body {
     background: hsl(360, 100%, 100%);
     font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
     min-height: 740px;
-    pointer-events: none;
     -webkit-font-smoothing: antialiased;
 }
-#impress {
-    pointer-events: auto;
-}
+
+/* enable clicking on elements 'hiding' behind body in 3D */
+body     { pointer-events: none; }
+#impress { pointer-events: auto; }
+
 .step {
     font-size: 48px;
     line-height: 1.5;
     padding: 40px;
-    width: 900px;
+
+    /* Chrome @font-face anti-aliasing fix */
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+
+    width: 1000px;
     -webkit-transition: opacity 1s;
        -moz-transition: opacity 1s;
         -ms-transition: opacity 1s;
@@ -216,33 +241,6 @@ body {
 .step:not(.active) {
     opacity: 0.3; /* Chrome 4+, FF2+, Saf3.1+, Opera 9+, IE9, iOS 3.2+, Android 2.1+ */
     filter: alpha(opacity=30); /* IE6-IE8 */
-}
-#title {
-    padding: 0;
-}
-#title .try {
-    font-size: 32px;
-    position: absolute;
-    top: -0.5em;
-    left: 1.5em;
-
-    -webkit-transform: translateZ(20px);
-       -moz-transform: translateZ(20px);
-        -ms-transform: translateZ(20px);
-         -o-transform: translateZ(20px);
-            transform: translateZ(20px);
-}
-#title h1 {
-    font-size: 158px;
-
-    -webkit-transform: translateZ(50px);
-       -moz-transform: translateZ(50px);
-        -ms-transform: translateZ(50px);
-         -o-transform: translateZ(50px);
-            transform: translateZ(50px);
-}
-#title .footnote {
-    font-size: 32px;
 }
 .hint {
     background: rgba(0,0,0,0.5);
@@ -269,6 +267,67 @@ body {
         -ms-transition: opacity 1s,     -ms-transform 0.5s 1s;
          -o-transition: opacity 1s,      -o-transform 0.5s 1s;
             transition: opacity 1s,         transform 0.5s 1s;
+}
+.impress-on-title .hint {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+       -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+         -o-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s 4.5s;
+       -moz-transition: opacity 1s 5s,    -moz-transform 0.5s 4.5s;
+        -ms-transition: opacity 1s 5s,     -ms-transform 0.5s 4.5s;
+         -o-transition: opacity 1s 5s,      -o-transform 0.5s 4.5s;
+            transition: opacity 1s 5s,         transform 0.5s 4.5s;
+}
+#title {
+    height: 1000px;
+    padding: 0;
+    text-align: center;
+    width: 1240px;
+}
+#title h1 {
+    font-size: 158px;
+
+    -webkit-transform: translateZ(50px);
+       -moz-transform: translateZ(50px);
+        -ms-transform: translateZ(50px);
+         -o-transform: translateZ(50px);
+            transform: translateZ(50px);
+}
+#java-footnote {
+    font-size: 32px;
+}
+#author {
+    height: 600px;
+    padding: 0;
+    text-align: center;
+    width: 1240px;
+}
+#author h1 {
+    font-size: 158px;
+
+    -webkit-transform: translateZ(50px);
+       -moz-transform: translateZ(50px);
+        -ms-transform: translateZ(50px);
+         -o-transform: translateZ(50px);
+            transform: translateZ(50px);
+}
+#author .brought {
+    font-size: 32px;
+    position: absolute;
+    left: 1.5em;
+
+    -webkit-transform: translateZ(20px);
+       -moz-transform: translateZ(20px);
+        -ms-transform: translateZ(20px);
+         -o-transform: translateZ(20px);
+            transform: translateZ(20px);
+}
+#sample-code {
+    font-size: 18px;
+    width: 1240px;
 }
 .impress-on-overview .step {
     cursor: pointer;
@@ -304,9 +363,49 @@ body {
     display: block;
 }
 
-/*	--------------------------------------------------
-	$MISC
-	-------------------------------------------------- */
+/*  --------------------------------------------------
+    $CODE
+    -------------------------------------------------- */
+pre .str, code .str { color: #65B042; } /* string  - green */
+pre .kwd, code .kwd { color: #E28964; } /* keyword - dark pink */
+pre .com, code .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
+pre .typ, code .typ { color: #89bdff; } /* type - light blue */
+pre .lit, code .lit { color: #3387CC; } /* literal - blue */
+pre .pun, code .pun { color: #fff; } /* punctuation - white */
+pre .pln, code .pln { color: #fff; } /* plaintext - white */
+pre .tag, code .tag { color: #89bdff; } /* html/xml tag    - light blue */
+pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
+pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
+pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+
+pre.prettyprint, code.prettyprint {
+    background-color: #000;
+    -webkit-border-radius: 8px; /* Saf3-4, iOS 1-3.2, Android =1.6 */
+            border-radius: 8px; /* Opera 10.5, IE9, Saf5, Chrome, FF4+, iOS 4, Android 2.1+ */
+
+    /* prevent bg color from leaking out of border: http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed */
+    -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+
+pre.prettyprint {
+    font-family: Inconsolata, "Bitstream Vera Sans Mono", "Droid Sans Mono", "Courier New", monospace;
+    width: 95%;
+    margin: 1em auto;
+    padding: 1em;
+    white-space: pre-wrap;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+/*  --------------------------------------------------
+    $MISC
+    -------------------------------------------------- */
+::-moz-selection { background: #b3d4fc; text-shadow: none; }
+::selection { background: #b3d4fc; text-shadow: none; }
 .chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
 .ir { border: 0; font: 0/0 a; text-shadow: none; color: transparent; background-color: transparent; }
 .hidden { display: none !important; visibility: hidden; }
@@ -317,9 +416,9 @@ body {
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; }
 
-/*	--------------------------------------------------
-	$PRINT
-	-------------------------------------------------- */
+/*  --------------------------------------------------
+    $PRINT
+    -------------------------------------------------- */
 @media print {
     * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; } /* Black prints faster: h5bp.com/s */
     a, a:visited { text-decoration: underline; }
@@ -333,4 +432,15 @@ body {
     @page { margin: 0.5cm; }
     p, h2, h3 { orphans: 3; widows: 3; }
     h2, h3 { page-break-after: avoid; }
+    
+    pre .str, code .str { color: #060; }
+    pre .kwd, code .kwd { color: #006; font-weight: bold; }
+    pre .com, code .com { color: #600; font-style: italic; }
+    pre .typ, code .typ { color: #404; font-weight: bold; }
+    pre .lit, code .lit { color: #044; }
+    pre .pun, code .pun { color: #440; }
+    pre .pln, code .pln { color: #000; }
+    pre .tag, code .tag { color: #006; font-weight: bold; }
+    pre .atn, code .atn { color: #404; }
+    pre .atv, code .atv { color: #060; }
 }

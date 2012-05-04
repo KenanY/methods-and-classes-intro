@@ -194,7 +194,7 @@ table {
 	-------------------------------------------------- */
 body {
     background: hsl(360, 100%, 100%);
-    font-family: 'PT Sans', sans-serif;
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
     min-height: 740px;
     pointer-events: none;
     -webkit-font-smoothing: antialiased;
@@ -203,7 +203,6 @@ body {
     pointer-events: auto;
 }
 .step {
-    font-family: 'PT Serif', georgia, serif;
     font-size: 48px;
     line-height: 1.5;
     padding: 40px;
@@ -218,17 +217,44 @@ body {
     opacity: 0.3; /* Chrome 4+, FF2+, Saf3.1+, Opera 9+, IE9, iOS 3.2+, Android 2.1+ */
     filter: alpha(opacity=30); /* IE6-IE8 */
 }
+#title {
+    padding: 0;
+}
+#title .try {
+    font-size: 64px;
+    position: absolute;
+    top: -0.5em;
+    left: 1.5em;
+
+    -webkit-transform: translateZ(20px);
+    -moz-transform:    translateZ(20px);
+    -ms-transform:     translateZ(20px);
+    -o-transform:      translateZ(20px);
+    transform:         translateZ(20px);
+}
+#title h1 {
+    font-size: 158px;
+
+    -webkit-transform: translateZ(50px);
+    -moz-transform:    translateZ(50px);
+    -ms-transform:     translateZ(50px);
+    -o-transform:      translateZ(50px);
+    transform:         translateZ(50px);
+}
+#title .footnote {
+    font-size: 32px;
+}
 .hint {
     background: rgba(0,0,0,0.5);
     color: #EEE;
     font-size: 50px;
     padding: 20px;
-    
+
     position: fixed;
     left: 0;
     right: 0;
     bottom: 200px;
-    
+
     text-align: center;
     z-index: 100;
     opacity: 0; /* Chrome 4+, FF2+, Saf3.1+, Opera 9+, IE9, iOS 3.2+, Android 2.1+ */

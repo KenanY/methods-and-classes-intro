@@ -21,7 +21,7 @@
 * {
     -webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */
        -moz-box-sizing: border-box; /* FF1+ */
-            box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
+            box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1 */
 }
 
 /*  --------------------------------------------------
@@ -474,7 +474,7 @@ pre .tex .formula {
     @page { margin: 0.5cm; }
     p, h2, h3 { orphans: 3; widows: 3; }
     h2, h3 { page-break-after: avoid; }
-    
+
     pre .str, code .str { color: #060; }
     pre .kwd, code .kwd { color: #006; font-weight: bold; }
     pre .com, code .com { color: #600; font-style: italic; }

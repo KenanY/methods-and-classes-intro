@@ -218,6 +218,20 @@ body {
     min-height: 740px;
     -webkit-font-smoothing: antialiased;
 }
+blockquote {
+    text-align: justify;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+blockquote .author {
+    display: block;
+    text-align: right;
+    padding: 10px 40px;
+    font-weight: 600;
+    font-size: 36px;
+}
 
 /* enable clicking on elements 'hiding' behind body in 3D */
 body     { pointer-events: none; }
@@ -231,7 +245,7 @@ body     { pointer-events: none; }
     /* Chrome @font-face anti-aliasing fix */
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
 
-    width: 1000px;
+    width: 960px;
     -webkit-transition: opacity 1s;
        -moz-transition: opacity 1s;
         -ms-transition: opacity 1s;
@@ -281,6 +295,8 @@ body     { pointer-events: none; }
          -o-transition: opacity 1s 5s,      -o-transform 0.5s 4.5s;
             transition: opacity 1s 5s,         transform 0.5s 4.5s;
 }
+
+/* STEP SPECIFIC STYLES */
 #title {
     height: 1000px;
     padding: 0;
@@ -319,6 +335,8 @@ body     { pointer-events: none; }
     font-size: 32px;
     position: absolute;
     left: 1.5em;
+    top: 1.5em;
+    text-align: left;
 
     -webkit-transform: translateZ(20px);
        -moz-transform: translateZ(20px);
@@ -329,6 +347,12 @@ body     { pointer-events: none; }
 #sample-code {
     font-size: 18px;
     width: 1240px;
+}
+#methods, #syntax-method, #syntax-formal-parameter-list {
+    font-size: 32px;
+    padding: 0;
+    text-align: left;
+    width: 960px;
 }
 .impress-on-overview .step {
     cursor: pointer;

@@ -8,7 +8,7 @@ Modernizr.load([
         }
     },
     {
-        test: Modernizr.classList,
+        test: Modernizr.classlist,
         nope: ['js/vendor/classList.min.js'],
         both: ['js/vendor/impress.js', 'js/vendor/highlight.pack.js'],
         complete: function () {

@@ -218,19 +218,45 @@ body {
     min-height: 740px;
     -webkit-font-smoothing: antialiased;
 }
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 24px;
+    padding: 0;
+}
+h1 {
+    font-size: 72px;
+}
+h2 {
+    font-size: 60px;
+    /* The bottom margin is small. It's designed to be used with gray meta text
+     * below a post title. */
+    margin: 24px 0 6px;
+}
+h3 {
+    font-size: 48px;
+}
+h4 {
+    font-size: 45px;
+}
+h5 {
+    font-size: 42px;
+}
 blockquote {
     text-align: justify;
     font-weight: 300;
     font-style: italic;
     line-height: 1.4;
 }
-
 blockquote .author {
     display: block;
     text-align: right;
     padding: 10px 40px;
     font-weight: 600;
     font-size: 36px;
+}
+hr {
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: hsl(0, 0%, 60%);
 }
 
 /* enable clicking on elements 'hiding' behind body in 3D */
@@ -258,7 +284,7 @@ body     { pointer-events: none; }
 }
 .hint {
     background: rgba(0,0,0,0.5);
-    color: #EEE;
+    color: hsl(0, 0%, 93%);
     font-size: 50px;
     padding: 20px;
 

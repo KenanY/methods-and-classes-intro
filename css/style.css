@@ -13,7 +13,7 @@
     --------------------------------------------------
     :: * { box-sizing: border-box } FTW :: Paul Irish                          :: http://paulirish.com/2012/box-sizing-border-box-ftw/
     :: normalize.css                    :: Nicolas Gallagher and Jonathan Neal :: http://necolas.github.com/normalize.css/
-    :: Sunburst code theme              :: David Leibovic                      :: https://code.google.com/p/google-code-prettify/source/browse/trunk/styles/sunburst.css
+    :: Solarized Light code theme       :: Ported by Jeremy Hull               :: https://github.com/isagalaev/highlight.js/blob/master/src/styles/solarized_light.css
     :: Non-semantic helper classes      :: H5BP Team                           :: https://github.com/h5bp/html5-boilerplate/blob/master/css/style.css#L248-270
     :: Print styles                     :: H5BP Team                           :: https://github.com/h5bp/html5-boilerplate/blob/master/css/style.css#L274-292
 */
@@ -218,7 +218,14 @@ body {
     min-height: 740px;
     -webkit-font-smoothing: antialiased;
 }
-
+code {
+    color: #333;
+    border: 1px solid #eaeaea;
+    background: #f8f8f8;
+    font-family: Inconsolata, "Bitstream Vera Sans Mono", "Droid Sans Mono", "Courier New", monospace;
+    -webkit-border-radius: 3px; /* Saf3-4, iOS 1-3.2, Android =1.6 */
+            border-radius: 3px; /* Opera 10.5, IE9, Saf5, Chrome, FF4+, iOS 4, Android 2.1+ */
+}
 /* enable clicking on elements 'hiding' behind body in 3D */
 body     { pointer-events: none; }
 #impress { pointer-events: auto; }
@@ -251,7 +258,7 @@ body     { pointer-events: none; }
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 200px;
+    bottom: 100px;
 
     text-align: center;
     z-index: 100;
@@ -366,40 +373,82 @@ body     { pointer-events: none; }
 /*  --------------------------------------------------
     $CODE
     -------------------------------------------------- */
-pre .str, code .str { color: #65B042; } /* string  - green */
-pre .kwd, code .kwd { color: #E28964; } /* keyword - dark pink */
-pre .com, code .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
-pre .typ, code .typ { color: #89bdff; } /* type - light blue */
-pre .lit, code .lit { color: #3387CC; } /* literal - blue */
-pre .pun, code .pun { color: #fff; } /* punctuation - white */
-pre .pln, code .pln { color: #fff; } /* plaintext - white */
-pre .tag, code .tag { color: #89bdff; } /* html/xml tag    - light blue */
-pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
-pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
-pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
-
-pre.prettyprint, code.prettyprint {
-    background-color: #000;
-    -webkit-border-radius: 8px; /* Saf3-4, iOS 1-3.2, Android =1.6 */
-            border-radius: 8px; /* Opera 10.5, IE9, Saf5, Chrome, FF4+, iOS 4, Android 2.1+ */
-
-    /* prevent bg color from leaking out of border: http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed */
-    -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+pre code {
+    background: #fdf6e3;
+    color: #657b83;
+    display: block;
+    padding: 0.5em;
 }
-
-pre.prettyprint {
-    font-family: Inconsolata, "Bitstream Vera Sans Mono", "Droid Sans Mono", "Courier New", monospace;
-    width: 95%;
-    margin: 1em auto;
-    padding: 1em;
-    white-space: pre-wrap;
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .doctype,
+pre .pi,
+pre .lisp .string,
+pre .javadoc {
+    color: #93a1a1;
+    font-style: italic;
 }
-
-/* Specify class=linenums on a pre to get line numbering */
-ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; } /* IE indents via margin-left */
-li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
-/* Alternate shading for lines */
-li.L1,li.L3,li.L5,li.L7,li.L9 { }
+pre .keyword,
+pre .css .rule .keyword,
+pre .winutils,
+pre .method,
+pre .addition,
+pre .css .tag,
+pre .header {
+    color: #859900;
+}
+pre .number,
+pre .command,
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula,
+pre .regexp,
+pre .hexcolor {
+    color: #2aa198;
+}
+pre .title,
+pre .localvars,
+pre .chunk,
+pre .decorator,
+pre .builtin,
+pre .built_in,
+pre .identifier,
+pre .title .keymethods,
+pre .id {
+    color: #268bd2;
+}
+pre .attribute,
+pre .variable,
+pre .instancevar,
+pre .lisp .body,
+pre .smalltalk .number,
+pre .constant,
+pre .class .title,
+pre .parent,
+pre .haskell .label {
+    color: #b58900;
+}
+pre .preprocessor,
+pre .preprocessor .keyword,
+pre .shebang,
+pre .symbol,
+pre .diff .change,
+pre .special,
+pre .keymethods,
+pre .attr_selector,
+pre .important,
+pre .subst,
+pre .cdata {
+    color: #cb4b16;
+}
+pre .deletion {
+    color: #dc322f;
+}
+pre .tex .formula {
+    background: #eee8d5;
+}
 
 /*  --------------------------------------------------
     $MISC

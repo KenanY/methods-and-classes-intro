@@ -298,6 +298,7 @@ body     { pointer-events: none; }
 }
 #java-footnote {
     font-size: 32px;
+    text-align: center;
 }
 #author {
     height: 600px;

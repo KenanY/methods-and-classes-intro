@@ -15,7 +15,7 @@ Modernizr.load([
             if ("ontouchstart" in document.documentElement) { 
                 document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
             }
-            $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+            $('pre code').each(function(i, e) {hljs.highlightBlock(e);});
             impress().init();
         }
     }

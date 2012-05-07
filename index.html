@@ -42,13 +42,16 @@
             <p>A method is a collection of statements. A method may be predefined, such as by the Java system. However, you'll need to eventually create your own methods.</p>
             <p>User-defined methods in Java fall into two categories:</p>
             <ul>
-                <li><strong>Value-returning methods</strong>&mdash;methods that have a return data type. The <code>return</code> statement will be explained later.</li>
+                <li><strong>Value-returning methods</strong>&mdash;methods that have a return data type. The <code style="color:hsl(240, 100%, 50%);">return</code> statement will be explained later.</li>
                 <li><strong>Void methods</strong>&mdash;methods that do not have a return data type.</li>
             </ul>
         </div>
         
-        <div id="sample-code" class="step" data-x="6250" data-y="2500" data-scale="3">
+        <div id="method-heading" class="step" data-x="6250" data-y="2500" data-scale="3">
             <p>The name, parameters, and data type of a method are part of the <strong>heading</strong>.</p>
+            <p>For example, a heading might look like this:</p>
+            <pre><code class="language-java">public static int abs(int number)</code></pre>
+            <p>The code of a method is called the <strong>body</strong> of the method. Together, the heading and the body form the <strong>definition</strong> of the method.</p>
             <pre><code class="language-java">
 public static int abs(int number)
 {
@@ -58,13 +61,19 @@ public static int abs(int number)
     return number;
 }
             </code></pre>
-            <p>The variable called in the heading is called the <strong>formal parameter</strong> of the method</p>
+            <p>The variable called in the heading is called the <strong>formal parameter</strong> of the method.</p>
         </div>
         
         <div id="syntax-method" class="step" data-x="6250" data-y="5000" data-scale="3">
             <h3>Syntax: Method</h3>
             <hr />
-            <p>Atque armata mare deambulavit latere potentiae Apollonium illis codicello de. Athenagorae principio intus huius ea complacuit leno caelum ad te ad te sed. His singulare inseparabiliter in deinde cupis auras narrans, atque album Apolloni dicere quod una Christi Lorem post. Horreo Athenagora mihi cum suam in, athenagorae principio intus ad quia iuvenis. Pentapoli naves frumentum sed dominum vidit loco! Video cum obiectum est in rei completo litus tuos ratio puella. Probo artium studiose rosa ad nomine Stranguillio cum suam non ait Cumque autem est in modo invenit. Antiochia videns ac noctes C in modo ad nomine, descendit ad nomine Hesterna studiis vadem singulas cotidie enim.</p>
+            <p>The syntax of a method is:</p>
+            <pre><code>
+modifiers(s) returnType methodName(formal parameter list)
+{
+    statement(s)
+}
+            </pre></code>
         </div>
         
         <div id="syntax-formal-parameter-list" class="step" data-x="6250" data-y="7500" data-scale="3">

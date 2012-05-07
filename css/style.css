@@ -4,6 +4,8 @@
     :: box-sizing: border-box;
     :: NORMALIZE
     :: MAIN
+    :: HEADINGS
+    :: IMPRESS
     :: CODE
     :: MISC
     :: PRINT
@@ -215,9 +217,24 @@ table {
 body {
     background: hsl(360, 100%, 100%);
     font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+    line-height: 1.5;
     min-height: 740px;
+    min-width: 960px;
     -webkit-font-smoothing: antialiased;
 }
+hr {
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: hsl(0, 0%, 60%);
+}
+
+/* enable clicking on elements 'hiding' behind body in 3D */
+body     { pointer-events: none; }
+#impress { pointer-events: auto; }
+
+/*  --------------------------------------------------
+    $HEADINGS
+    -------------------------------------------------- */
 h1, h2, h3, h4, h5, p {
     margin-bottom: 24px;
     padding: 0;
@@ -240,38 +257,29 @@ h4 {
 h5 {
     font-size: 42px;
 }
-blockquote {
-    text-align: justify;
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.4;
-}
-blockquote .author {
-    display: block;
-    text-align: right;
-    padding: 10px 40px;
-    font-weight: 600;
-    font-size: 36px;
-}
-hr {
-    text-align: left;
-    margin: 0 auto 0 0;
-    color: hsl(0, 0%, 60%);
-}
 
-/* enable clicking on elements 'hiding' behind body in 3D */
-body     { pointer-events: none; }
-#impress { pointer-events: auto; }
-
+/*  --------------------------------------------------
+    $IMPRESS
+    -------------------------------------------------- */
+#impress {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
 .step {
-    font-size: 48px;
+    text-align: left;
+    font-size: 32px;
     line-height: 1.5;
     padding: 40px;
+    width: 960px;
+    margin: 0 auto;
+    
+    display: inline;
+    float: left;
 
     /* Chrome @font-face anti-aliasing fix */
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
 
-    width: 960px;
     -webkit-transition: opacity 1s;
        -moz-transition: opacity 1s;
         -ms-transition: opacity 1s;
@@ -370,15 +378,11 @@ body     { pointer-events: none; }
          -o-transform: translateZ(20px);
             transform: translateZ(20px);
 }
-#sample-code {
-    font-size: 18px;
-    width: 1240px;
+#method-heading {
+    line-height: 1.1;
 }
-#methods, #syntax-method, #syntax-formal-parameter-list {
-    font-size: 32px;
-    padding: 0;
-    text-align: left;
-    width: 960px;
+#syntax-method {
+    width: 1024px;
 }
 .impress-on-overview .step {
     cursor: pointer;
@@ -417,82 +421,88 @@ body     { pointer-events: none; }
 /*  --------------------------------------------------
     $CODE
     -------------------------------------------------- */
+pre {
+    line-height: 1em;
+}
 pre code {
-    background: #fdf6e3;
-    color: #657b83;
-    display: block;
-    padding: 0.5em;
+    display: block; 
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+pre, code {
+    font-family: 'Bitstream Vera Sans Mono', Courier, monospace;
+    font-size: 28px;
 }
 pre .comment,
+pre .annotation,
 pre .template_comment,
 pre .diff .header,
-pre .doctype,
-pre .pi,
-pre .lisp .string,
-pre .javadoc {
-    color: #93a1a1;
-    font-style: italic;
+pre .chunk,
+pre .apache .cbracket {
+    color: hsl(120, 100%, 25%);
 }
 pre .keyword,
-pre .css .rule .keyword,
-pre .winutils,
-pre .method,
-pre .addition,
-pre .css .tag,
-pre .header {
-    color: #859900;
-}
-pre .number,
-pre .command,
-pre .string,
-pre .tag .value,
-pre .phpdoc,
-pre .tex .formula,
-pre .regexp,
-pre .hexcolor {
-    color: #2aa198;
-}
-pre .title,
-pre .localvars,
-pre .chunk,
-pre .decorator,
-pre .builtin,
+pre .id,
 pre .built_in,
-pre .identifier,
-pre .title .keymethods,
-pre .id {
-    color: #268bd2;
+pre .smalltalk .class,
+pre .winutils,
+pre .bash .variable,
+pre .tex .command,
+pre .header {
+    color: hsl(240, 100%, 50%);
 }
-pre .attribute,
-pre .variable,
-pre .instancevar,
-pre .lisp .body,
-pre .smalltalk .number,
-pre .constant,
-pre .class .title,
+pre .string,
+pre .title,
 pre .parent,
-pre .haskell .label {
-    color: #b58900;
-}
-pre .preprocessor,
-pre .preprocessor .keyword,
-pre .shebang,
-pre .symbol,
-pre .diff .change,
-pre .special,
-pre .keymethods,
-pre .attr_selector,
-pre .important,
-pre .subst,
-pre .cdata {
-    color: #cb4b16;
-}
-pre .deletion {
-    color: #dc322f;
-}
+pre .tag .value,
+pre .rules .value,
+pre .rules .value .number,
+pre .ruby .symbol,
+pre .ruby .symbol .string,
+pre .ruby .symbol .keyword,
+pre .ruby .symbol .keymethods,
+pre .instancevar,
+pre .aggregate,
+pre .template_tag,
+pre .django .variable,
+pre .addition,
+pre .flow,
+pre .stream,
+pre .apache .tag,
+pre .date,
 pre .tex .formula {
-    background: #eee8d5;
+    color: hsl(0, 77%, 36%);
 }
+pre .ruby .string,
+pre .decorator,
+pre .filter .argument,
+pre .localvars,
+pre .array,
+pre .attr_selector,
+pre .pseudo,
+pre .pi,
+pre .doctype,
+pre .deletion,
+pre .envvar,
+pre .shebang,
+pre .preprocessor,
+pre .userType,
+pre .apache .sqbracket,
+pre .nginx .built_in,
+pre .tex .special,
+pre .input_number {
+    color: hsl(194, 61%, 43%);
+}
+pre .phpdoc,
+pre .javadoc,
+pre .xmlDocTag {
+    color: hsl(0, 0%, 50%);
+}
+
+pre .vhdl .type { font-weight: bold; }
+pre .vhdl .string { color: hsl(0, 0%, 40%); }
+pre .vhdl .literal { color: hsl(0, 77%, 36%); }
 
 /*  --------------------------------------------------
     $MISC

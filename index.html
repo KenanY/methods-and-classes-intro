@@ -76,16 +76,28 @@ modifiers(s) returnType methodName(formal parameter list)
             </pre></code>
         </div>
         
-        <div id="syntax-formal-parameter-list" class="step" data-x="6250" data-y="7500" data-scale="3">
-            <h3>Syntax: Formal Parameter List</h3>
+        <div id="return-statement" class="step" data-x="6250" data-y="7500" data-scale="3">
+            <h3>return Statement</h3>
             <hr />
-            <ul>
-                <li>Deum</li>
-                <li>Nullam</li>
-                <li>Chaldaeorum</li>
-                <li>Spero</li>
-                <li>Mirantur</li>
-            </ul>
+            <p>A value-returning method uses a <code style="color:hsl(240, 100%, 50%);">return</code> statement to return its value.</p>
+            <pre><code class="language-java">
+return expr;
+            </code></pre>
+            <p>When the statment executes in a method, the method immediately terminates.</p>
+        </div>
+        
+        <div id="value-returning-method" class="step" data-x="6250" data-y="10000" data-scale="3">
+            <h3>Value-returning Method</h3>
+            <hr />
+            <pre><code class="language-java">
+public static double square(double num)
+{
+    return num * num;
+}
+
+num1 = 8.0;
+num2 = square(num1);
+            </code></pre>
         </div>
     </div>
     <div class="hint">
